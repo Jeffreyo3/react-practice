@@ -12,7 +12,7 @@ export default function CountryCard({ country }) {
     return (
         <Card>
             <h3>{country.name}</h3>
-            <img src={`${country.flag}`} style={{ width: '250px', height: '150px' }} />
+            <img src={`${country.flag}`} style={{ width: '250px', height: '150px' }} alt={`Flag of ${country.name}`} />
             <p>Capital: {country.capital}</p>
             <p>Population: {country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </Card>

@@ -13,7 +13,6 @@ function App() {
     Axios
       .get(`https://restcountries.eu/rest/v2/regionalbloc/${region}`)
       .then(res => {
-        console.log(res.data)
         setListOfCountries(res.data)
       })
       .catch(err => console.log(err))
