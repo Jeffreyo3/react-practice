@@ -5,11 +5,13 @@ const Card = styled.div`
 margin: 2% auto;
 border: 1px solid slategrey;
 border-radius: 20px;
+background-color: whitesmoke;
 `
 
 const Img = styled.img`
 width: 250px;
 height: 150px;
+border: 1px solid whitesmoke;
 `
 
 export default function CountryCard({ country }) {
