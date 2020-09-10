@@ -1,27 +1,26 @@
-import React from 'react';
-import './App.css';
-import Axios from 'axios';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Axios from "axios";
 
-import Header from './components/Header';
-import Body from './components/Body';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
 function App() {
-  const [listOfCountries, setListOfCountries] = React.useState([])
-  const [region, setRegion] = React.useState('EU')
-  React.useEffect(() => {
-    Axios
-      .get(`https://restcountries.eu/rest/v2/regionalbloc/${region}`)
-      .then(res => {
-        setListOfCountries(res.data)
+  const [listOfCountries, setListOfCountries] = useState([]);
+  const [region, setRegion] = useState("EU");
+  useEffect(() => {
+    Axios.get(`https://restcountries.eu/rest/v2/regionalbloc/${region}`)
+      .then((res) => {
+        setListOfCountries(res.data);
       })
-      .catch(err => console.log(err))
-  }, [region])
+      .catch((err) => console.log(err));
+  }, [region]);
 
   const updateRegion = (event) => {
     event.preventDefault();
-    setRegion(event.target.value)
-  }
+    setRegion(event.target.value);
+  };
 
   return (
     <div className="App">
