@@ -1,23 +1,23 @@
-import React from 'react';
-import logo from './globe.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Body from './components/Body'
+import AnimeQuotes from './components/AnimeQuotes';
+import NameForm from './components/NameForm'
+
+
+const defaultName = "Saitama"
 
 function App() {
+  const [name, setName] = useState(defaultName)
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       {/* <Body title={"Counter"} /> */}
+       <NameForm name={name} setName={setName}/>
+
+       <AnimeQuotes name={name}/>
+       
       </header>
     </div>
   );
